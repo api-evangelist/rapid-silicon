@@ -1,17 +1,37 @@
 aid: rapid-silicon
 name: Rapid Silicon
-description: 'Rapid Silicon is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+description: >-
+  Rapid Silicon is a fabless semiconductor company founded in 2019 and headquartered in Los Gatos,
+  California, building AI- and intelligent-edge-focused FPGAs and embedded FPGA (eFPGA) IP on an
+  open-source technology base. Its product line covers the Gemini FPGA family, the Vega eFPGA IP core
+  (a customizable, scalable embeddable FPGA fabric from roughly 1.5K to 100K+ logic cells with
+  configurable BRAM and DSP MAC tiles), and the Rapid eFPGA Configurator for self-service eFPGA
+  resource sizing. Design work is done in the Raptor Design Suite, the company's RTL-to-bitstream
+  EDA tool-chain covering simulation, synthesis, placement, routing, bitstream generation and device
+  configuration, released under GPL3 as what the company describes as the first complete
+  commercially available open-source FPGA tool-chain. Rapid Silicon raised a $15M seed round in 2021
+  and a $30M Series A in January 2023 from Cambium Capital Partners and Chengwei Capital, and is led
+  by chairman and CEO Naveed Sherwani. The company's products are silicon IP and locally installed
+  design software rather than a hosted service, so it publishes no public web API, developer portal
+  or machine-readable API contract; as of 2026-05-25 its rapidsilicon.com website no longer serves
+  company content and redirects to a domain-brokerage page.
 url: https://raw.githubusercontent.com/api-evangelist/rapid-silicon/refs/heads/main/apis.yml
 x-type: company
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
 specificationVersion: '0.20'
 created: '2026-08-26'
 modified: '2026-08-26'
 tags:
 - Company
+- Semiconductors
+- FPGA
+- eFPGA
+- Electronic Design Automation
+- Chip Design
+- Open Source
+- Hardware
+- Edge AI
+- Silicon IP
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -19,5 +39,47 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
-- type: Website
-  url: https://www.nasdaqprivatemarket.com/
+- type: GitHubOrganization
+  name: Rapid Silicon on GitHub
+  url: https://github.com/RapidSilicon
+- type: SourceCode
+  name: Raptor Design Suite (GPL3, hosted in the OSFPGA Foundation org)
+  description: >-
+    Rapid Silicon's Raptor RTL-to-bitstream FPGA compiler and GUI, open-sourced by the company under
+    GPL3. It is published in the github.com/os-fpga organization, which belongs to the Open-Source
+    FPGA Foundation rather than to Rapid Silicon itself; the company's own press releases identify
+    Raptor as its tool-chain and this repository as where it is released.
+  url: https://github.com/os-fpga/Raptor
+- type: DomainSecurity
+  url: security/rapid-silicon-domain-security.yml
+- type: LLMsTxt
+  url: llms/rapid-silicon-llms.txt
+x-enrichment:
+  date: '2026-08-26'
+  status: minimal
+  artifacts_added: 3
+  pass: local-v1
+x-coverage:
+  state: none
+  reason: no-developer-program
+  detail: >-
+    Rapid Silicon sells eFPGA IP cores and a GPL3 desktop RTL-to-bitstream tool-chain (Raptor), never
+    a hosted service, and ships no developer program of any kind — and its corporate site is now gone
+    on top of that: since 2026-05-25 rapidsilicon.com 301s to realdha.com, a domain-brokerage listing,
+    and returns 404 for /openapi.json, /llms.txt, every former product and documentation path, and all
+    seven /.well-known/ paths, while a GitHub code search across both the RapidSilicon and os-fpga
+    organizations returns zero OpenAPI or Swagger documents.
+  evidence:
+  - url: https://rapidsilicon.com/
+    status: 301
+  - url: https://rapidsilicon.com/openapi.json
+    status: 404
+  - url: https://rapidsilicon.com/llms.txt
+    status: 404
+  - url: https://rapidsilicon.com/.well-known/agent-card.json
+    status: 404
+  - url: https://rapidsilicon.com/documentation
+    status: 404
+  - url: https://github.com/RapidSilicon
+    status: 200
+  checked: '2026-08-26'

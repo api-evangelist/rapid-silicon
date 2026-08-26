@@ -64,5 +64,33 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Rapid Silicon is a company surfaced via the API Evangelist harvest backlog (source: secondary-market) and added to the network as a stub for full-pipeline profiling.
-- https://www.nasdaqprivatemarket.com/
+Rapid Silicon is a fabless semiconductor company founded in 2019 and headquartered in Los Gatos,
+California, building AI- and intelligent-edge-focused FPGAs and embedded FPGA (eFPGA) IP on an
+open-source technology base. Its products are the Gemini FPGA family, the Vega eFPGA IP core
+(customizable from roughly 1.5K to 100K+ logic cells with configurable BRAM and DSP MAC tiles), the
+Rapid eFPGA Configurator, and the Raptor Design Suite — an RTL-to-bitstream EDA tool-chain released
+under GPL3. The company raised $15M in seed funding in 2021 and a $30M Series A in January 2023 from
+Cambium Capital Partners and Chengwei Capital, and is led by chairman and CEO Naveed Sherwani.
+
+## API surface
+
+**None found.** Rapid Silicon sells silicon IP and locally installed design software, not a hosted
+service. Contract discovery on 2026-08-26 probed `rapidsilicon.com` for `/openapi.json`, `/llms.txt`
+and seven `/.well-known/` paths (all HTTP 404), and code-searched both the
+[RapidSilicon](https://github.com/RapidSilicon) and [os-fpga](https://github.com/os-fpga) GitHub
+organizations for OpenAPI/Swagger documents (0 results). No OpenAPI, GraphQL SDL, AsyncAPI, gRPC,
+WSDL, MCP server, A2A agent card, developer portal, SDK or published pricing was found.
+
+## Website status
+
+`rapidsilicon.com` is still registered to the company (GoDaddy, registry expiry 2027-06-14) and its
+mail exchange still resolves to Microsoft 365 with SPF `-all` and DMARC `p=quarantine`. Since
+2026-05-25, however, the web origin returns HTTP 301 to `https://realdha.com/` — a third-party
+domain-brokerage listing — and HTTP 404 for every product, blog and documentation path. There is
+currently no reachable Rapid Silicon website.
+
+## Links
+
+- [Rapid Silicon on GitHub](https://github.com/RapidSilicon)
+- [Raptor Design Suite](https://github.com/os-fpga/Raptor) (GPL3, published in the Open-Source FPGA Foundation organization)
+- [Rapid Silicon on LinkedIn](https://www.linkedin.com/company/rapidsilicon)

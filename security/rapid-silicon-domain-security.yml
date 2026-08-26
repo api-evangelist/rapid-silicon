@@ -1,0 +1,58 @@
+generated: '2026-08-26'
+method: probed
+source: rapidsilicon.com (DNS + TLS probed directly 2026-08-26)
+name: Rapid Silicon domain security posture
+description: >-
+  TLS, HSTS and DNS posture for rapidsilicon.com, Rapid Silicon's registered corporate domain. The
+  domain is still registered to the company through GoDaddy (registry expiry 2027-06-14) and its mail
+  exchange still points at Microsoft 365 with a hard-fail SPF record and a DMARC policy, but since
+  2026-05-25 the web origin no longer serves company content. Absence of a record below is a measured
+  observation, not an omission.
+hosts:
+- host: rapidsilicon.com
+  https:
+    reachable: true
+    tls_version: TLSv1.3
+    cipher: AEAD-CHACHA20-POLY1305-SHA256
+    alpn: h2
+    certificate_subject: CN=rapidsilicon.com
+    certificate_start_date: '2026-05-25'
+    note: >-
+      GET / returns HTTP 301 to https://realdha.com/ (a third-party domain-for-sale page); HEAD /
+      returns 405. All previously published product, blog and documentation paths return 404.
+  hsts:
+    present: false
+    max_age: null
+  dns:
+    a:
+    - 3.33.251.168
+    - 15.197.225.128
+    nameservers:
+    - ns33.domaincontrol.com
+    - ns34.domaincontrol.com
+    dnssec:
+      present: false
+      note: no DNSKEY record returned
+    caa:
+      present: false
+      note: no CAA record returned
+    spf:
+      present: true
+      record: v=spf1 include:spf.protection.outlook.com -all
+      policy: hard fail (-all)
+    dmarc:
+      present: true
+      record: v=DMARC1; p=quarantine; pct=100
+      policy: quarantine
+    mx:
+    - 'rapidsilicon-com.mail.protection.outlook.com (priority 0)'
+registration:
+  registrar: GoDaddy.com, LLC
+  creation_date: '2019-06-14'
+  registry_expiry_date: '2027-06-14'
+  updated_date: '2026-05-25'
+  status:
+  - clientDeleteProhibited
+  - clientRenewProhibited
+  - clientTransferProhibited
+  - clientUpdateProhibited

@@ -1,0 +1,41 @@
+generated: '2026-08-26'
+method: probed
+source: https://rapidsilicon.com/.well-known/
+name: Rapid Silicon well-known documents
+description: >-
+  Probe of the RFC 8615 /.well-known/ surface on rapidsilicon.com, the only host Rapid Silicon is
+  known to have operated. Every path returned HTTP 404 from the parking/forwarding origin that now
+  answers for the domain. No well-known document is served, so no WellKnown or SecurityTxt pointer
+  is emitted in apis.yml — this file records a measured absence, not a presence.
+hosts:
+- host: rapidsilicon.com
+  note: >-
+    Since 2026-05-25 (TLS certificate issuance date and WHOIS Updated Date) this host answers GET /
+    with a 301 to https://realdha.com/, a third-party domain-brokerage listing page, and 404 for
+    every other path probed.
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 404
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+    file: null
+  - path: /.well-known/api-catalog
+    status: 404
+    file: null
+  - path: /.well-known/ai-plugin.json
+    status: 404
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 404
+    file: null
+  - path: /.well-known/agent.json
+    status: 404
+    file: null
+summary:
+  hosts_probed: 1
+  documents_probed: 7
+  documents_served: 0
