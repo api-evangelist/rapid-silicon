@@ -18,6 +18,17 @@ description: >-
 url: https://raw.githubusercontent.com/api-evangelist/rapid-silicon/refs/heads/main/apis.yml
 x-type: company
 x-source: harvest:secondary-market
+deliveryModel:
+  model: unknown
+  open_source: unknown
+  commercial: false
+  callable_host: false
+  label: Delivery model not determined — needs a product licence on record
+  confidence: low
+  source:
+  - repository-unlicensed
+  generated: '2026-08-28'
+  method: derived
 specificationVersion: '0.20'
 created: '2026-08-26'
 modified: '2026-08-26'
